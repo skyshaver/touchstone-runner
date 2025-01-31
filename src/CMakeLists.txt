@@ -15,6 +15,9 @@ include_directories(../)
 # GLFW
 find_package(glfw3 CONFIG REQUIRED)
 
+#Open CV
+find_package(OpenCV CONFIG REQUIRED)
+
 # fmt
 # find_package(fmt CONFIG REQUIRED)
 
@@ -33,6 +36,8 @@ set(LIBRARIES "glfw")
 set(all_file
   "main.cpp"
   ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp   
+  ${IMGUI_DIR}/backends/imgui_impl_win32.cpp 
+  ${IMGUI_DIR}/backends/imgui_impl_dx12.cpp   
   ${IMGUI_DIR}/imgui.cpp 
   ${IMGUI_DIR}/imgui_draw.cpp 
   ${IMGUI_DIR}/imgui_demo.cpp 
@@ -43,5 +48,9 @@ set(all_file
 add_executable (touchstone-runner ${all_file})
 
 target_link_libraries(touchstone-runner PRIVATE 	
-	glfw	
+	glfw
+	opencv_core
+	d3d12.lib
+	dxgi.lib
+	d3dcompiler.lib
 )
