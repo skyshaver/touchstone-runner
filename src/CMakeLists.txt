@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.30)
+cmake_minimum_required (VERSION 3.25)
 
 project("touchstone-runner")
 
@@ -32,8 +32,7 @@ set(LIBRARIES "glfw")
 
 set(all_file
   "main.cpp"
-  ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp 
-  ${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp 
+  ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp   
   ${IMGUI_DIR}/imgui.cpp 
   ${IMGUI_DIR}/imgui_draw.cpp 
   ${IMGUI_DIR}/imgui_demo.cpp 
