@@ -31,6 +31,7 @@ include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends ..)
 
 set(all_file
   "main.cpp"  
+  "OCVScreenShot.cpp"
   ${IMGUI_DIR}/backends/imgui_impl_win32.cpp 
   ${IMGUI_DIR}/backends/imgui_impl_dx12.cpp   
   ${IMGUI_DIR}/imgui.cpp 

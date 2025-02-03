@@ -81,6 +81,9 @@ int main(int, char**)
     bool show_opencv_window = true;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
+    // User Class Objects
+    OCVScreenShot ocvScreenShot{};
+
     // Main loop
     bool done = false;
     while (!done)
@@ -146,7 +149,7 @@ int main(int, char**)
             if (ImGui::Button("Close Me"))
                 show_opencv_window = false;
             if (ImGui::Button("Take a ScreenShot"))
-                screenShotToFile();
+                ocvScreenShot.screenShotToFile();
             ImGui::End();
         }
 
