@@ -12,11 +12,9 @@ set(CMAKE_INSTALL_PREFIX ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} CACHE PATH "" FORCE)
 
 include_directories(../)
  
-# GLFW
-find_package(glfw3 CONFIG REQUIRED)
-
 #Open CV
 find_package(OpenCV CONFIG REQUIRED)
+include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 # fmt
 # find_package(fmt CONFIG REQUIRED)
@@ -45,7 +43,7 @@ set(all_file
 add_executable (touchstone-runner ${all_file})
 
 target_link_libraries(touchstone-runner PRIVATE 		
-	opencv_core
+	${OpenCV_LIBS}
 	d3d12.lib
 	dxgi.lib
 	d3dcompiler.lib
