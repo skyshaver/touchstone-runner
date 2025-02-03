@@ -30,12 +30,9 @@ include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends ..)
 #set(IMPLOT_DIR "C:/imgui/implot/")
 # include_directories(${IMPLOT_DIR})
 
-# Libraries
-set(LIBRARIES "glfw")
 
 set(all_file
-  "main.cpp"
-  ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp   
+  "main.cpp"  
   ${IMGUI_DIR}/backends/imgui_impl_win32.cpp 
   ${IMGUI_DIR}/backends/imgui_impl_dx12.cpp   
   ${IMGUI_DIR}/imgui.cpp 
@@ -47,8 +44,7 @@ set(all_file
 
 add_executable (touchstone-runner ${all_file})
 
-target_link_libraries(touchstone-runner PRIVATE 	
-	glfw
+target_link_libraries(touchstone-runner PRIVATE 		
 	opencv_core
 	d3d12.lib
 	dxgi.lib
