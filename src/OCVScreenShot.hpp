@@ -12,8 +12,9 @@ private:
     BITMAPINFOHEADER createBitmapHeader(int width, int height);
 
 public:
-    cv::Mat captureScreenMat(HWND hwnd);
+    cv::Mat captureScreenMat(HWND hwnd, MONITORINFO monInfo);
     void screenShotToFile();
+    MONITORINFO GetPrimaryMonitorInfo();
 };
 
 

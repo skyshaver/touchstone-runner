@@ -150,6 +150,8 @@ int main(int, char**)
                 show_opencv_window = false;
             if (ImGui::Button("Take a ScreenShot"))
                 ocvScreenShot.screenShotToFile();
+            /*if (ImGui::Button("check moninfo"))
+                ocvScreenShot.GetPrimaryMonitorInfo();*/
             ImGui::End();
         }
 
